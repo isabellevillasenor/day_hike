@@ -31,6 +31,13 @@ RSpec.describe 'Trips Show Page' do
       expect(page).to have_content(@t1.total_distance)
       expect(@t1.total_distance).to eq(50)
     end
+
+    it 'should display the average distance of all trails on the trip' do
+      visit "/trips/#{@t1.id}"
+
+      expect(page).to have_content(@t1.average_distance)
+      expect(@t1.average_distance).to eq(25)
+    end
     
   end
 end
