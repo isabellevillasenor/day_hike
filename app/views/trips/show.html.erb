@@ -8,5 +8,8 @@
   <h3 style="color:#9FAC79;">Name: <%= trail.name %></h3>
   <p style="color:#B3A580;"><b>Address: </b><%= trail.address %></p>
   <p style="color:#B3A580;"><b>Miles: </b><%= trail.length %></p>
-<% end %>
-  <h4 style="color:#65c485;"><b>Total Trip Miles: </b><%= @trip.total_distance %></h4>
+<% end %><br/>
+
+<h2 style="color:#65c485;">Trail Stats for <%= @trip.name %></h2>
+  <h4 style="color:#9FAC79;"><b>Total Trip Miles: </b><%= @trip.total_distance %></h4>
+  <h4 style="color:#9FAC79;"><b>Average Trip Miles: </b><%= @trip.average_distance %></h4>
