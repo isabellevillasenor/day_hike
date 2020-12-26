@@ -10,7 +10,6 @@ RSpec.describe 'Trips Show Page' do
 
     TripTrail.create!(trail: @cherry, trip: @t1)
     TripTrail.create!(trail: @falcon, trip: @t1)
-
   end
 
   describe 'As A Visitor' do
@@ -39,5 +38,15 @@ RSpec.describe 'Trips Show Page' do
       expect(@t1.average_distance).to eq(25)
     end
     
+    it 'should display the longest trail on the trip' do
+      visit "/trips/#{@t1.id}"
+
+      expect(page).to have_content("Longest Trail on #{@t1.name}")
+      expect(page).to have_content(@t1.longest_trail.name)
+      expect(@t1.longest_trail.name).to eq(@cherry.name)
+
+      expect(page).to have_content(@t1.longest_trail.length)
+      expect(@t1.longest_trail.length).to eq(@cherry.length)
+    end
   end
 end
