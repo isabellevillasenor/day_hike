@@ -7,4 +7,8 @@ class Trail < ApplicationRecord
   def all_trips
     trips.all
   end
+
+  def total_trips
+    trips.count
+  end
 end
