@@ -48,5 +48,16 @@ RSpec.describe 'Trips Show Page' do
       expect(page).to have_content(@t1.longest_trail.length)
       expect(@t1.longest_trail.length).to eq(@cherry.length)
     end
+
+    it 'should display the shortest trail on the trip' do
+      visit "/trips/#{@t1.id}"
+
+      expect(page).to have_content("Shortest Trail on #{@t1.name}")
+      expect(page).to have_content(@t1.shortest_trail.name)
+      expect(@t1.shortest_trail.name).to eq(@falcon.name)
+
+      expect(page).to have_content(@t1.shortest_trail.length)
+      expect(@t1.shortest_trail.length).to eq(@falcon.length)
+    end
   end
 end
