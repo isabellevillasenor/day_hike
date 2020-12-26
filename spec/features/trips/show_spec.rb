@@ -59,5 +59,17 @@ RSpec.describe 'Trips Show Page' do
       expect(page).to have_content(@t1.shortest_trail.length)
       expect(@t1.shortest_trail.length).to eq(@falcon.length)
     end
+
+    it 'should have links on trail names that reroute to that trails show page' do
+      visit "/trips/#{@t1.id}"
+
+      expect(page).to have_link(@cherry.name)
+      click_on(@cherry.name)
+
+      expect(current_path).to eq("/trails/#{@cherry.id}")
+      expect(page).to have_content(@cherry.name)
+      expect(page).to have_content(@cherry.length)  
+      expect(page).to have_content(@cherry.address)  
+    end
   end
 end
