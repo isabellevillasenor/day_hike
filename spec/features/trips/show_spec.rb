@@ -8,16 +8,14 @@ RSpec.describe 'Trips Show Page' do
 
   describe 'As A Visitor' do
 
-    it 'should show the name, start_date and end_date' do
+    it 'should show the name start date and end date' do
       visit "/trips/#{@t1.id}"
 
       expect(page).to have_content(@t1.name)
       expect(page).to have_content(@t1.start_date)
       expect(page).to have_content(@t1.end_date)
 
-      expect(page).to have_no_content(@t2.name)
-      expect(page).to have_no_content(@t2.start_date)
-      expect(page).to have_no_content(@t2.end_date)
+      expect(page).to_not have_content(@t2.name)
     end
     
   end

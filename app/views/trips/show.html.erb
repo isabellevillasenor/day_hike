@@ -1,3 +1,11 @@
 <h1 style="color:Violet;"><%= @trip.name %> Info</h1>
 <p style="color:SlateBlue;"><b>Start Date: </b><%= @trip.start_date %></p>
-<p style="color:SlateBlue;"><b>End Date: </b><%= @trip.end_date %></p>
+<p style="color:SlateBlue;"><b>End Date: </b><%= @trip.end_date %></p><br/>
+
+<h3 style="color:#65c485;">All Trails Included in <%= @trip.name %></h3>
+
+<% @trip.all_trails.each do |trail| %>
+  <p style="color:SlateBlue;"><%= trail.name %></p>
+  <p style="color:SlateBlue;"><%= trail.address %></p>
+  <p style="color:SlateBlue;"><%= trail.length %></p>
+<% end%>
