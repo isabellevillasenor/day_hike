@@ -1,3 +1,9 @@
 <h1 style="color:Violet;"><%= @trail.name %> Info</h1>
 <p style="color:SlateBlue;"><b>Length: </b><%= @trail.length %></p>
 <p style="color:SlateBlue;"><b>General Location Area: </b><%= @trail.address %></p>
+
+<h2 style="color:#65c485;">Trips Containing <%= @trail.name %> Trail</h2>
+  <% @trail.all_trips.each do |trip| %>
+    <p style="color:#B3A580;"><b>Name: </b><%= trip.name %></p>
+    <p style="color:#B3A580;"><b>Total Distance: </b><%= trip.total_distance %></p>
+  <% end %>
