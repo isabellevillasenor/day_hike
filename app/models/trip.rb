@@ -6,4 +6,8 @@ class Trip < ApplicationRecord
   def all_trails
     trails.all
   end
+
+  def total_distance
+    trails.sum(:length)
+  end
 end

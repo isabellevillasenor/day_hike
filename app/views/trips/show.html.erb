@@ -2,10 +2,11 @@
 <p style="color:SlateBlue;"><b>Start Date: </b><%= @trip.start_date %></p>
 <p style="color:SlateBlue;"><b>End Date: </b><%= @trip.end_date %></p><br/>
 
-<h3 style="color:#65c485;">All Trails Included in <%= @trip.name %></h3>
+<h2 style="color:#65c485;">All Trails Included in <%= @trip.name %></h2>
 
 <% @trip.all_trails.each do |trail| %>
-  <p style="color:SlateBlue;"><%= trail.name %></p>
-  <p style="color:SlateBlue;"><%= trail.address %></p>
-  <p style="color:SlateBlue;"><%= trail.length %></p>
-<% end%>
+  <h3 style="color:#9FAC79;">Name: <%= trail.name %></h3>
+  <p style="color:#B3A580;"><b>Address: </b><%= trail.address %></p>
+  <p style="color:#B3A580;"><b>Miles: </b><%= trail.length %></p>
+<% end %>
+  <h4 style="color:#65c485;"><b>Total Trip Miles: </b><%= @trip.total_distance %></h4>
