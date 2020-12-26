@@ -13,3 +13,4 @@
 <h2 style="color:#65c485;">Trail Stats for <%= @trip.name %></h2>
   <h4 style="color:#9FAC79;"><b>Total Trip Miles: </b><%= @trip.total_distance %></h4>
   <h4 style="color:#9FAC79;"><b>Average Trip Miles: </b><%= @trip.average_distance %></h4>
+  <h4 style="color:#9FAC79;"><b>Longest Trail on <%= @trip.name %>: </b></h4><p style="color:#B3A580;"><b><%= @trip.longest_trail.name %> - </b><%= @trip.longest_trail.length %> Miles</p>
