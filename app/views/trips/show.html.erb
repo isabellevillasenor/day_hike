@@ -5,7 +5,7 @@
 <h2 style="color:#65c485;">All Trails Included in <%= @trip.name %></h2>
 
 <% @trip.all_trails.each do |trail| %>
-  <h3 style="color:#9FAC79;">Name: <%= trail.name %></h3>
+  <h3><a href="/trails/<%= trail.id %>" style="color:#9FAC79">Name: <%= trail.name %></a></h3>
   <p style="color:#B3A580;"><b>Address: </b><%= trail.address %></p>
   <p style="color:#B3A580;"><b>Miles: </b><%= trail.length %></p>
 <% end %><br/>
